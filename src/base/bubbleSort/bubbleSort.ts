@@ -2,7 +2,7 @@
 // Melhor caso: O(n) quando a lista ja está ordenada, ainda necessita percorrer a lista 1 vez
 // Caso medio e pior caso: O(n)² onde será necessario percorrer todo o array
 
-const bubbleSort = (arr: Array<number>) => {
+export const bubbleSort = (arr: Array<number>) => {
   console.log("start array: ", arr.toString());
 
   // Inicia com "tamanho do array - 1" e vai decrescendo pq na primeira iteração o maior elemento ja vai para a ultima posição
@@ -20,13 +20,9 @@ const bubbleSort = (arr: Array<number>) => {
         swap = true;
       }
     }
-    // if (!swap) break; // Otimização, se não houver nenhuma mudança, para de percorrer o array pois ja está ordenado
+    if (!swap) break; // Otimização, se não houver nenhuma mudança, para de percorrer o array pois ja está ordenado
     console.log(`[i: ${i}] array: ${arr.toString()}`);
   }
 
   console.log("final array: ", arr.toString());
 };
-
-const arr = [5, 4, 3, 2];
-//const arr = [6, 7, 8, 1, 2, 3, 4, 5, 6];
-bubbleSort(arr);
