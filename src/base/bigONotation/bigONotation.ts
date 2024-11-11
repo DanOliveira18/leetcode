@@ -59,6 +59,21 @@ const findElement = (matrix: Array<Array<number>>, target: number) => {
   console.log("target not found");
 };
 
+// O(n^2)
+// O Tempo de execução está diretamente ligado com a entrada, onde
+// a execução será n * n, sendo n o tamanho do array.
+// Portanto se o array tiver 10 posições, será executado 100 iterações.
+const combineNames = (arr: Array<string>) => {
+  // O(n^2)
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] !== arr[j]) {
+        console.log(`Combinação: ${arr[i]} + ${arr[j]}`);
+      }
+    }
+  }
+};
+
 // --- TEST CASES
 const items = [5, 6, 7, 8, 9, 3, 4, 6, 7];
 
@@ -80,3 +95,7 @@ const items = [5, 6, 7, 8, 9, 3, 4, 6, 7];
 
 // console.log("Find Element");
 // findElement(matrix, 11);
+
+const names = ["João", "Felipe", "Ana", "Gabriela"];
+console.log("Combine names");
+combineNames(names);
